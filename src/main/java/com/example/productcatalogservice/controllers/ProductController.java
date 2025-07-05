@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@RestController // This annotation helps to indicate this follows REST
 public class ProductController {
     // ProductController is a Bean or singleton object which we will use
     // across the Product Catalog service.
