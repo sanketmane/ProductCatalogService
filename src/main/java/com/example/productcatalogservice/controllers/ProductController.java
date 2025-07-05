@@ -2,7 +2,6 @@ package com.example.productcatalogservice.controllers;
 
 import com.example.productcatalogservice.models.Product;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
