@@ -33,6 +33,8 @@ public class ProductController {
     // @RequestBody annotation maps post body to product object
     // Translation from JSON to object and vice versa is handled
     // by library called Jackson in Java.
+    // Also, it's a good practice to just return the same created object
+    // in response.
     public Product createProduct(@RequestBody Product product) {
         List<Product> products = getAllProducts();
         products.add(product);
