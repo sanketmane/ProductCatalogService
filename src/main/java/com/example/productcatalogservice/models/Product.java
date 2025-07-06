@@ -12,6 +12,8 @@ public class Product extends BaseModel {
     private String description;
     private Double price;
     private String imageUrl;
+    private Category category;
+    private Boolean isPrimeSpecific; // Business Specific field which we don't want to expose to Seller or Buyer
 
     public Product() {
         // below setter methods are available because of lombok
