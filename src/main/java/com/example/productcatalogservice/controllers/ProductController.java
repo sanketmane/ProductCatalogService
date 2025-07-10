@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Practice the code here as it will be mostly asked during the mock interview
+
 @RestController
 // This annotation helps to indicate this class follows REST principles
 // hence the output will be either JSON or XML.
@@ -77,10 +79,13 @@ public class ProductController {
     // by library called Jackson in Java.
     // Also, it's a good practice to just return the same created object
     // in response.
-    public Product createProduct(@RequestBody Product product) {
-        List<Product> products = productService.getAllProductDetails();
-        products.add(product);
-        return product;
+//    public Product createProduct(@RequestBody Product product) {
+//        List<Product> products = productService.getAllProductDetails();
+//        products.add(product);
+//        return product;
+//    }
+    public ProductDto createProduct(@RequestBody ProductDto productDto){
+        return null;
     }
 
     @DeleteMapping("/products/{id}")

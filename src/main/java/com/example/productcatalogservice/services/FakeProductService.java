@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// Practice the code here as it will be mostly asked during the mock interview
+
 @Service
 public class FakeProductService implements IProductService {
 
