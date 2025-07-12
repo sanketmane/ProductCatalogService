@@ -9,6 +9,7 @@ public interface IProductService {
     // Refer to the MVC arch diagram in the lecture
     List<Product> getAllProductDetails();
     Product getProductById(Long id);
-    Product createProduct(Product product);
-
+    Product createProduct(Product product);  // post request
+    Product replaceProduct(Long id, Product product); //put request
+    Product deleteProduct(Long productId);
 }
