@@ -25,6 +25,9 @@ public class ProductController {
 
     @Autowired // for automatically handling dependency injection
     private IProductService productService; //currently refers to only FakeProductService
+    // If you have several implementation of IProductService and want to use different bean/object
+    // depending on the need, then you can add Qualifier annotation with the specifier Service implementation
+    // E.g. Qualifier("storageProductService") - notice the name is in camel case i.e. starts with lower case alphabet.
 
     @GetMapping("/products")
 //    public List<Product> getAllProducts() {
