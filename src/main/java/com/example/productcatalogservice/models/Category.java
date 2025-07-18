@@ -1,9 +1,13 @@
 package com.example.productcatalogservice.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,7 +23,9 @@ public class Category extends BaseModel {
     // Since category field is already mapped with M:1 cardinality,
     // we don't want to do it again here in reverse fashion(OneToMany), hence mappedBy is used below.
     // This tells JPA, not to do the mapping again and just ignore this relationship.
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    @Fetch(FetchMode.SUBSELECT)
+//    @BatchSize(size = 2)
     private List<Product> products;
 
     public Category() {
