@@ -1,6 +1,8 @@
 package com.example.productcatalogservice.repos;
 
 import com.example.productcatalogservice.models.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -39,5 +41,8 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
     // or named arguments(:method argument name)
     @Query("SELECT p.description from Product p where p.id=:id")
     String getMeDescriptionForProductId(Long id);
+
+    // Query the search string in db and return a pageable response of Product
+    Page<Product> findByNameEquals(String searchString, Pageable pageable);
 
 }

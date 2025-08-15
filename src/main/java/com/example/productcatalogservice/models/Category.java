@@ -1,5 +1,6 @@
 package com.example.productcatalogservice.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
@@ -26,6 +27,7 @@ public class Category extends BaseModel {
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     @Fetch(FetchMode.SUBSELECT)
 //    @BatchSize(size = 2)
+    @JsonBackReference
     private List<Product> products;
 
     public Category() {

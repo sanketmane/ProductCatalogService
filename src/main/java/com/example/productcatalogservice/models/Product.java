@@ -1,5 +1,6 @@
 package com.example.productcatalogservice.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,6 +23,7 @@ public class Product extends BaseModel {
     // CascadeType.ALL means say - if a category isn't present but a product with a new category
     // is being added then a new Category will be automatically created.
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Category category;
     private Boolean isPrimeSpecific; // Business Specific field which we don't want to expose to Seller or Buyer
 
