@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// We will create a separate controller for Search functionality
+
 @RestController
 @RequestMapping("/search")
 public class SearchController {
